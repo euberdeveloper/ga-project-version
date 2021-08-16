@@ -22,4 +22,4 @@ outputs:
     description: 'The version of you project'
 runs:
   using: 'node12'
-  main: 'index.js'
+  main: 'dist/index.js'
