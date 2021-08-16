@@ -25,4 +25,4 @@ branding:
   color: green
 runs:
   using: 'node12'
-  main: 'dist/index.js'
+  main: 'bundled/index.js'
