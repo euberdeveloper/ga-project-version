@@ -1,0 +1,25 @@
+name: 'ga-project-version'
+description: 'This github action gets from the package manager json file (package.json, composer.json, ...) the version of the project and exposes it'
+author: 'Eugenio Berretta <euberdeveloper@gmail.com>'
+inputs:
+  package-manager:
+    description: 'The package manager that you are using (npm, composer, ...)'
+    required: false
+    default: 'npm'
+  root-directory:
+    description: 'The directory containing you project file (package.json, composer.json, ...)'
+    required: false
+    default: './'
+  path:
+    description: 'A direct path to your json project file (package.json, composer.json, ...)'
+    required: false
+  version-prop:
+    description: 'The name of the property containing the version'
+    required: false
+    default: 'version'
+outputs:
+  version:
+    description: 'The version of you project'
+runs:
+  using: 'node12'
+  main: 'index.js'

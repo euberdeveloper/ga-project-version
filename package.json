@@ -1,0 +1,27 @@
+{
+  "name": "ga-project-version",
+  "version": "1.0.0",
+  "description": "This github action gets from the package manager json file (package.json, composer.json, ...) the version of the project and exposes it",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "tsc -p src"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/euberdeveloper/ga-project-version.git"
+  },
+  "author": "Eugenio Vinicio Berretta <euberdeveloper@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/euberdeveloper/ga-project-version/issues"
+  },
+  "homepage": "https://github.com/euberdeveloper/ga-project-version#readme",
+  "dependencies": {
+    "@actions/core": "^1.4.0",
+    "euberlog": "^2.0.18"
+  },
+  "devDependencies": {
+    "@types/node": "^16.6.1",
+    "typescript": "^4.3.5"
+  }
+}
