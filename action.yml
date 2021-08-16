@@ -20,6 +20,9 @@ inputs:
 outputs:
   version:
     description: 'The version of you project'
+branding:
+  icon: check
+  color: green
 runs:
   using: 'node12'
   main: 'dist/index.js'
