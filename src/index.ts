@@ -5,7 +5,14 @@ import { getPath } from './utils/getPath';
 import { getVersion } from './utils/getVersion';
 import { parseOptions } from './utils/parseOptions';
 
+import * as fs from 'fs';
+
+
 try {
+    const files = fs.readdirSync(process.cwd());
+    console.log(JSON.stringify(files, null, 2));
+
+
     logger.info('Parsing options...');
     const options = parseOptions();
     logger.info('Getting path');
