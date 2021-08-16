@@ -17,5 +17,5 @@ export function getPath(options: Options): string {
     }
 
     const filename = getPackageManagerJsonName(options.packageManager);
-    return path.join(options.rootDirectory, filename);
+    return path.join(process.cwd(), options.rootDirectory, filename);
 }
