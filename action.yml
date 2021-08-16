@@ -1,5 +1,5 @@
 name: 'ga-project-version'
-description: 'This github action gets from the package manager json file (package.json, composer.json, ...) the version of the project and exposes it'
+description: 'Gets from the package manager file (package.json, composer.json, ...) the version of the project and exposes it.'
 author: 'Eugenio Berretta <euberdeveloper@gmail.com>'
 inputs:
   package-manager:
