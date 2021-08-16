@@ -1,6 +1,6 @@
 {
   "name": "ga-project-version",
-  "version": "1.0.1",
+  "version": "1.0.2s",
   "description": "This github action gets from the package manager json file (package.json, composer.json, ...) the version of the project and exposes it",
   "main": "dist/index.js",
   "scripts": {
