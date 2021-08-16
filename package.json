@@ -7,7 +7,7 @@
     "pretranspile": "shx rm -rf dist",
     "transpile": "tsc -p src",
     "prebundle": "shx rm -rf dist bundled",
-    "bundle": "webpack"
+    "bundle": "IS_WEBPACK=true webpack"
   },
   "repository": {
     "type": "git",

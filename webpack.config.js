@@ -1,4 +1,5 @@
 const path = require('path');
+const webpack = require('webpack');
 
 const libConfig = {
     target: 'node',
@@ -23,6 +24,9 @@ const libConfig = {
             }
         ]
     },
+    plugins: [
+        new webpack.EnvironmentPlugin(['IS_WEBPACK'])
+    ],
     output: {
         path: path.resolve(__dirname, 'bundled'),
         filename: 'index.js',
