@@ -1,6 +1,6 @@
 import * as core from '@actions/core';
+import logger from 'euberlog';
 
-import logger from './utils/logger';
 import { getPath } from './utils/getPath';
 import { getVersion } from './utils/getVersion';
 import { parseOptions } from './utils/parseOptions';

@@ -45,12 +45,12 @@ jobs:
 
 ### Supported Parameters
 
-| Parameter         | Description                                                                                           | Default     |
-| ----------------- | ----------------------------------------------------------------------------------------------------- | ----------- |
-| `package-manager` | The package manager of your project (`npm`, `composer` or `maven`).                                            | `npm`       |
-| `root-directory`  | The root directory (containing your `.json/.xml` file)                                                | `./`        |
-| `path`            | If you have a custom json file containing the version of the project, you can specify its full path.  | `undefined` |
-| `version-prop`    | If in the json file the property containing the version is not called `version`, you can set it here. | `version`   |
+| Parameter         | Description                                                                                                                                        | Default     |
+| ----------------- | -------------------------------------------------------------------------------------------------------------------------------------------------- | ----------- |
+| `package-manager` | The package manager of your project (`npm`, `composer` or `maven`).                                                                                | `npm`       |
+| `root-directory`  | The root directory (containing your `.json/.xml` file)                                                                                             | `./`        |
+| `path`            | If you have a custom json file containing the version of the project, you can specify its full path.                                               | `undefined` |
+| `version-prop`    | If in the json file the property containing the version is not called `version`, you can set it here. The key can be nested, like in `uno.due.tre` | `version`   |
 
 **Note:** If `path` is specified, `package-manager` and `root-directory` are ignored.
 
