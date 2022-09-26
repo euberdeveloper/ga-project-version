@@ -1,9 +1,9 @@
 # ga-project-version
-This github action gets from the package manager json file (package.json, composer.json, ...) the version of the project and exposes it.
+This github action gets from the package manager json file (package.json, composer.json, ...), or in case an xml one, the version of the project and exposes it.
 
 ## Project purpose
 
-Sometimes, for instance when you publish a github release or a dockerhub image through a github action, you need a properly way to choose the version. If you are using `npm` with **NodeJS** or `composer` with **PHP**, you will have a `package.json` or `composer.json` file where you can easily put the version of the project. This can be extended to other languages/package managers, as long as they have a **.json** file. This project consists in a **github action** that automatically exposes the **version** contained in those json files, so that they can be used by other steps of the action you are adding.
+Sometimes, for instance when you publish a github release or a dockerhub image through a github action, you need a properly way to choose the version. If you are using `npm` with **NodeJS** or `composer` with **PHP**, you will have a `package.json` or `composer.json` file where you can easily put the version of the project. If you are using `Maven` with `java` you will be using a `pom.xml` file. This can be extended to other languages/package managers, as long as they have a **.json** or **.xml** file. This project consists in a **github action** that automatically exposes the **version** contained in those json/xml files, so that they can be used by other steps of the action you are adding.
 
 ## Example
 
@@ -48,7 +48,7 @@ jobs:
 | Parameter         | Description                                                                                           | Default     |
 | ----------------- | ----------------------------------------------------------------------------------------------------- | ----------- |
 | `package-manager` | The package manager of your project (`npm` or `composer`).                                            | `npm`       |
-| `root-directory`  | The root directory (containing your `.json` file)                                                     | `./`        |
+| `root-directory`  | The root directory (containing your `.json/.xml` file)                                                | `./`        |
 | `path`            | If you have a custom json file containing the version of the project, you can specify its full path.  | `undefined` |
 | `version-prop`    | If in the json file the property containing the version is not called `version`, you can set it here. | `version`   |
 
@@ -72,7 +72,6 @@ The action uses directly `path` if specified, otherwise it guesses the file name
 
 Some improvements could be:
 1. Add support for more package managers.
-2. Add support for other extensions other than json.
-3. Add support for `version-prop` in case it is nested in other objects.
+2. Add support for `version-prop` in case it is nested in other objects.
 
 Feel free to make pull requests
