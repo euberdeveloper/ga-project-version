@@ -47,7 +47,7 @@ jobs:
 
 | Parameter         | Description                                                                                           | Default     |
 | ----------------- | ----------------------------------------------------------------------------------------------------- | ----------- |
-| `package-manager` | The package manager of your project (`npm` or `composer`).                                            | `npm`       |
+| `package-manager` | The package manager of your project (`npm`, `composer` or `maven`).                                            | `npm`       |
 | `root-directory`  | The root directory (containing your `.json/.xml` file)                                                | `./`        |
 | `path`            | If you have a custom json file containing the version of the project, you can specify its full path.  | `undefined` |
 | `version-prop`    | If in the json file the property containing the version is not called `version`, you can set it here. | `version`   |
