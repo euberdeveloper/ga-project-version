@@ -1,6 +1,7 @@
 export enum PackageManager {
     NPM = 'npm',
-    COMPOSER = 'composer'
+    COMPOSER = 'composer',
+    MAVEN = 'maven'
 }
 
 export interface Options {

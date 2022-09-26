@@ -11,11 +11,11 @@ try {
     logger.info('Getting path');
     const path = getPath(options);
     logger.info('Getting version', path);
-    const version = getVersion(path, options.versionProp);
+    const version = getVersion(path, options);
     logger.success('Version gotten!!!', version);
     core.setOutput('version', version);
 }
-catch (error) {
+catch (error: any) {
     console.error('Error in getting project version', error);
     core.setFailed(error.message);
 }
