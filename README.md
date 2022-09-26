@@ -72,6 +72,5 @@ The action uses directly `path` if specified, otherwise it guesses the file name
 
 Some improvements could be:
 1. Add support for more package managers.
-2. Add support for `version-prop` in case it is nested in other objects.
 
 Feel free to make pull requests
