@@ -1,4 +1,4 @@
-import { XMLParser, XMLBuilder, XMLValidator} from "fast-xml-parser";
+import { XMLParser } from "fast-xml-parser";
 import * as fs from 'fs';
 
 import { Options } from "../types/Options";

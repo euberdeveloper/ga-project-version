@@ -7,9 +7,10 @@ export function parseOptions(): Options {
     const rootDirectory = core.getInput('root-directory');
     const path = core.getInput('path');
     const versionProp = core.getInput('version-prop');
+    const packageManagerValues = Object.values(PackageManager);
 
-    if (!Object.values(PackageManager).includes(packageManager)) {
-        throw new Error(`Invalid package manager ${packageManager}`);
+    if (!packageManagerValues.includes(packageManager)) {
+        throw new Error(`Invalid package manager ${packageManager}, possible values: ${JSON.stringify(packageManagerValues, null, 2)}`);
     }
 
     return {
