@@ -27,4 +27,15 @@ describe('Test utility getVersion', function () {
         const expected = '1.0.23';
         expect(result).toEqual(expected);
     });
+
+    it('Should work with a maven project`', function () {
+        const options: Options = {
+            rootDirectory: path.join(ASSETS_PATH, 'maven'),
+            packageManager: PackageManager.MAVEN,
+            versionProp: 'project.version'
+        };
+        const result = getVersion(`${options.rootDirectory}/pom.xml`, options);
+        const expected = '3.1';
+        expect(result).toEqual(expected);
+    });
 });

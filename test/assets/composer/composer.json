@@ -1,0 +1,18 @@
+{
+  "version": "1.2.3",
+  "name": "babbou/webfoto",
+  "autoload": {
+    "psr-4": {
+      "XXX\\Webfoto\\": "src/"
+    }
+  },
+  "config": {
+    "vendor-dir": "vendor"
+  },
+  "authors": [
+    {
+      "name": "gabibbo",
+      "email": "gabibbo@gmail.com"
+    }
+  ]
+}
