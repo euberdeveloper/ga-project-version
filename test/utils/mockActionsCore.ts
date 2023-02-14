@@ -6,6 +6,12 @@ interface Status {
 }
 
 const statuses = {
+    status0: {
+        'package-manager': 'npm',
+        'root-directory': '.',
+        'path': undefined,
+        'version-prop': undefined
+    },
     status1: {
         'package-manager': 'npm',
         'root-directory': '.',

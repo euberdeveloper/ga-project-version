@@ -4,6 +4,18 @@ import { parseOptions } from '@src/utils/parseOptions.js';
 import { PackageManager } from '@src/types/Options.js';
 
 describe('Test utility parseOptions', function () {
+    it('Should work with options of status0`', function () {
+        setMockActionsCoreStatus('status0');
+
+        const options = parseOptions();
+        expect(options).toEqual({
+            packageManager: PackageManager.NPM,
+            rootDirectory: '.',
+            path: undefined,
+            versionProp: 'version'
+        });
+    });
+
     it('Should work with options of status1`', function () {
         setMockActionsCoreStatus('status1');
 
