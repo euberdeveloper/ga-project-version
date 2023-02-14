@@ -14,8 +14,7 @@ try {
     const version = getVersion(path, options);
     logger.success('Version gotten!!!', version);
     core.setOutput('version', version);
-}
-catch (error: any) {
+} catch (error: any) {
     console.error('Error in getting project version', error);
     core.setFailed(error.message);
 }

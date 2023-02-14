@@ -5,11 +5,9 @@ import * as fs from 'fs';
 import { Options, PackageManager } from '../types/Options';
 import { getNestedProperty } from './getNestedProperty';
 
-
-declare function __non_webpack_require__(path: string): any;
-
 function getJsonContent(inputPath: string): any {
-    const fileContent = process.env.IS_WEBPACK ? __non_webpack_require__(inputPath) : require(inputPath);
+    const fileContentTxt = fs.readFileSync(inputPath, 'utf8');
+    const fileContent = JSON.parse(fileContentTxt);
     return fileContent;
 }
 
