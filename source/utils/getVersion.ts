@@ -2,8 +2,8 @@ import { XMLParser } from 'fast-xml-parser';
 import * as tomlParser from 'toml';
 import * as fs from 'fs';
 
-import { Options, PackageManager } from '../types/Options';
-import { getNestedProperty } from './getNestedProperty';
+import { Options, PackageManager } from '@/types/Options.js';
+import { getNestedProperty } from './getNestedProperty.js';
 
 function getJsonContent(inputPath: string): any {
     const fileContentTxt = fs.readFileSync(inputPath, 'utf8');

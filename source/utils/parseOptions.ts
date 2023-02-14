@@ -1,6 +1,6 @@
 import * as core from '@actions/core';
 
-import { Options, PackageManager } from '../types/Options';
+import { Options, PackageManager } from '@/types/Options.js';
 
 function getDefaultVersionProp(packageManager: PackageManager): any {
     switch (packageManager) {

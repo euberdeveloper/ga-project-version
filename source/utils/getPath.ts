@@ -1,6 +1,6 @@
 import * as path from 'path';
 
-import { Options, PackageManager } from '../types/Options';
+import { Options, PackageManager } from '@/types/Options.js';
 
 function getPackageManagerConfigFileName(packageManager: PackageManager): string {
     switch (packageManager) {

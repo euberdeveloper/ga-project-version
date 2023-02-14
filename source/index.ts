@@ -1,9 +1,9 @@
 import * as core from '@actions/core';
 import logger from 'euberlog';
 
-import { getPath } from './utils/getPath';
-import { getVersion } from './utils/getVersion';
-import { parseOptions } from './utils/parseOptions';
+import { getPath } from './utils/getPath.js';
+import { getVersion } from './utils/getVersion.js';
+import { parseOptions } from './utils/parseOptions.js';
 
 try {
     logger.info('Parsing options...');
