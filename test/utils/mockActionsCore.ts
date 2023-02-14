@@ -29,6 +29,30 @@ const statuses = {
         'root-directory': '.',
         'path': 'myjavaPath',
         'version-prop': undefined
+    },
+    status5: {
+        'package-manager': 'pipenv',
+        'root-directory': '.',
+        'path': 'myjavaPath',
+        'version-prop': undefined
+    },
+    status6: {
+        'package-manager': 'poetry',
+        'root-directory': '.',
+        'path': 'myjavaPath',
+        'version-prop': undefined
+    },
+    status7: {
+        'package-manager': 'invalid',
+        'root-directory': '.',
+        'path': 'myjavaPath',
+        'version-prop': 'version'
+    },
+    status8: {
+        'package-manager': 'invalid',
+        'root-directory': '.',
+        'path': 'myjavaPath',
+        'version-prop': undefined
     }
 };
 

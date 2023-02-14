@@ -51,4 +51,40 @@ describe('Test utility parseOptions', function () {
             versionProp: 'project.version'
         });
     });
+
+    it('Should work with options of status5`', function () {
+        setMockActionsCoreStatus('status5');
+
+        const options = parseOptions();
+        expect(options).toEqual({
+            packageManager: PackageManager.PIPENV,
+            rootDirectory: '.',
+            path: 'myjavaPath',
+            versionProp: 'version'
+        });
+    });
+
+    it('Should work with options of status6`', function () {
+        setMockActionsCoreStatus('status6');
+
+        const options = parseOptions();
+        expect(options).toEqual({
+            packageManager: PackageManager.POETRY,
+            rootDirectory: '.',
+            path: 'myjavaPath',
+            versionProp: 'tool.poetry.version'
+        });
+    });
+
+    it('Should throw an error with options of status7 because of invalid package manager`', function () {
+        setMockActionsCoreStatus('status7');
+
+        expect(() => parseOptions()).toThrow();
+    });
+
+    it('Should throw an error with options of status8 because of invalid package manager (version step)`', function () {
+        setMockActionsCoreStatus('status8');
+
+        expect(() => parseOptions()).toThrow();
+    });
 });
