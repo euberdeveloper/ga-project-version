@@ -1,5 +1,5 @@
 import { XMLParser } from 'fast-xml-parser';
-import tomlParser from '@ltd/j-toml';
+import * as tomlParser from 'toml';
 import * as fs from 'fs';
 
 import { Options, PackageManager } from '../types/Options';
