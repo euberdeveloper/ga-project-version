@@ -40,11 +40,11 @@ function getFileContent(inputPath: string, options: Options): any {
 
 export function getVersion(inputPath: string, options: Options): string {
     const fileContent = getFileContent(inputPath, options);
-    const version = String(getNestedProperty(fileContent, options.versionProp));
+    const version: string | undefined = getNestedProperty(fileContent, options.versionProp);
 
     if (!version) {
         throw new Error(`No version found in ${inputPath} within property ${options.versionProp}`);
     }
 
-    return version;
+    return String(version);
 }

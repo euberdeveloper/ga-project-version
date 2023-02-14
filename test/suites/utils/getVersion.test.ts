@@ -1,7 +1,7 @@
 import { getVersion } from '@src/utils/getVersion.js';
 import { Options, PackageManager } from '@src/types/Options.js';
 
-import { ASSETS_PATH } from '@test/utils/index.js';
+import { ASSETS_PATH } from '@test/utils/paths.js';
 
 import path from 'node:path';
 
@@ -59,5 +59,23 @@ describe('Test utility getVersion', function () {
         const result = getVersion(`${options.rootDirectory}/Pipfile`, options);
         const expected = '1.2.0';
         expect(result).toEqual(expected);
+    });
+
+    it('Should throw an error because version is not present`', function () {
+        const options: Options = {
+            rootDirectory: path.join(ASSETS_PATH, 'pipenv'),
+            packageManager: PackageManager.PIPENV,
+            versionProp: 'wrong'
+        };
+        expect(() => getVersion(`${options.rootDirectory}/Pipfile`, options)).toThrow();
+    });
+
+    it('Should throw an error because of invalid packageManager`', function () {
+        const options: Options = {
+            rootDirectory: path.join(ASSETS_PATH, 'pipenv'),
+            packageManager: 'pocca' as any,
+            versionProp: 'version'
+        };
+        expect(() => getVersion(`${options.rootDirectory}/Pipfile`, options)).toThrow();
     });
 });
