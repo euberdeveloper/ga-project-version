@@ -26,6 +26,7 @@ const config: Config.InitialOptions = {
         }]
     },
     coverageProvider: 'v8',
+    collectCoverageFrom: ['source/**/*.ts'],
     moduleNameMapper: manageMapper(pathsToModuleNameMapper(tsconfigJson.compilerOptions.paths, { prefix: '<rootDir>/' }) as Record<string, string>),
     transformIgnorePatterns: [ '<rootDir>/node_modules/*' ],
 };

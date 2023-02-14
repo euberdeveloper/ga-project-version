@@ -1,4 +1,4 @@
-import { getPath } from '@src/utils/getPath.js'
+import { getPath } from '@src/utils/getPath.js';
 import { Options, PackageManager } from '@src/types/Options.js';
 
 import path from 'node:path';
