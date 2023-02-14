@@ -1,9 +1,9 @@
 {
     "compilerOptions": {
         "strict": true,
-        "target": "es5",
+        "target": "ES5",
         "lib": [
-            "ES2021"
+            "ES2022"
         ],
         "outDir": "../dist",
         "baseUrl": ".",

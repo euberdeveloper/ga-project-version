@@ -16,7 +16,6 @@ inputs:
   version-prop:
     description: 'The name of the property containing the version'
     required: false
-    default: 'version'
 outputs:
   version:
     description: 'The version of you project'

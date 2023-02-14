@@ -1,8 +1,9 @@
-import { XMLParser } from "fast-xml-parser";
+import { XMLParser } from 'fast-xml-parser';
+import tomlParser from '@ltd/j-toml';
 import * as fs from 'fs';
 
-import { Options } from "../types/Options";
-import { getNestedProperty } from "./getNestedProperty";
+import { Options, PackageManager } from '../types/Options';
+import { getNestedProperty } from './getNestedProperty';
 
 
 declare function __non_webpack_require__(path: string): any;
@@ -18,13 +19,22 @@ function getXmlContent(inputPath: string): any {
     return fileContent;
 }
 
+function getTomlContent(inputPath: string): any {
+    const fileContentTxt = fs.readFileSync(inputPath, 'utf8');
+    const fileContent = tomlParser.parse(fileContentTxt);
+    return fileContent;
+}
+
 function getFileContent(inputPath: string, options: Options): any {
     switch (options.packageManager) {
-        case 'npm':
-        case 'composer':
+        case PackageManager.NPM:
+        case PackageManager.COMPOSER:
             return getJsonContent(inputPath);
-        case 'maven':
+        case PackageManager.MAVEN:
             return getXmlContent(inputPath);
+        case PackageManager.PIPENV:
+        case PackageManager.POETRY:
+            return getTomlContent(inputPath);
         default:
             throw new Error(`Unknown package manager ${options.packageManager}`);
     }
