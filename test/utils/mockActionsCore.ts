@@ -1,9 +1,15 @@
+import path from 'node:path';
+import { ASSETS_PATH } from './paths.js';
+
 interface Status {
     'package-manager': string;
     'root-directory': string;
     'path': string | undefined;
     'version-prop': string | undefined;
 }
+
+let status: Status | null = null;
+let output: string | null = null;
 
 const statuses = {
     status0: {
@@ -59,10 +65,14 @@ const statuses = {
         'root-directory': '.',
         'path': 'myjavaPath',
         'version-prop': undefined
+    },
+    integration0: {
+        'package-manager': 'npm',
+        'root-directory': path.join(ASSETS_PATH, 'npm'),
+        'path': undefined,
+        'version-prop': undefined
     }
 };
-
-let status: Status | null = null;
 
 jest.mock('@actions/core', () => ({
     getInput(name: string): string | undefined {
@@ -71,9 +81,15 @@ jest.mock('@actions/core', () => ({
         }
 
         return status[name];
+    },
+    setOutput(_name: 'version', version: string) {
+        output = version;
     }
 }));
 
-export default function setMockActionsCoreStatus(statusKey: keyof typeof statuses): void {
+export function setMockActionsCoreStatus(statusKey: keyof typeof statuses): void {
     status = statuses[statusKey];
+}
+export function getOutput(): string | null {
+    return output;
 }

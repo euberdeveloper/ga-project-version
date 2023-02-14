@@ -1,4 +1,4 @@
-import setMockActionsCoreStatus from '@test/utils/mockActionsCore.js';
+import { setMockActionsCoreStatus } from '@test/utils/mockActionsCore.js';
 
 import { parseOptions } from '@src/utils/parseOptions.js';
 import { PackageManager } from '@src/types/Options.js';
