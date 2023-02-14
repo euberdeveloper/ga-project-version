@@ -1,0 +1,12 @@
+[tool.poetry]
+include = [
+  "LICENSE",
+]
+license = "ISC"
+name = "mymodule"
+readme = "README.md"
+version = "1.0.3"
+
+[tool.poetry.dependencies]
+
+[tool.poetry.dev-dependencies]
