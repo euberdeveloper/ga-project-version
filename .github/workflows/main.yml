@@ -1,0 +1,90 @@
+name: Deploy action
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Use Node.js 18.x
+        uses: actions/setup-node@v1
+        with:
+          node-version: 18.x
+
+      - name: Install node dependencies
+        run: npm install
+
+      - name: Lint code
+        run: npm run lint
+
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Use Node.js 18.x
+        uses: actions/setup-node@v1
+        with:
+          node-version: 18.x
+
+      - name: Install node dependencies
+        run: npm install
+
+      - name: Test action
+        run: npm test
+
+  build:
+    needs: [lint, test]
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Use Node.js
+        uses: actions/setup-node@v1
+        with:
+          node-version: 18.x
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build project
+        run: npm run bundle
+
+      - name: Create output folder
+        run: |
+          mkdir output
+          cp bundled action.yml README.md LICENSE output
+
+      - name: Upoad artifact
+        uses: actions/upload-artifact@v2
+        with:
+          name: output
+          path: output
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+        with:
+          ref: prod
+
+      - name: Remove what is alraedy there
+        run: rm -rf *
+
+      - name: Download artifact
+        uses: actions/download-artifact@v2
+        with:
+          name: output
+          path: .
+
+      - name: Commit changes
+        uses: stefanzweifel/git-auto-commit-action@v4
+        with:
+          commit_message: "build: update action with automatic commit"
+          create_branch: true
