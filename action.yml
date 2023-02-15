@@ -24,4 +24,4 @@ branding:
   color: green
 runs:
   using: 'node16'
-  main: 'bundled/index.js'
+  main: 'bundled/index.cjs'
