@@ -5,15 +5,15 @@ async function buildModule() {
         platform: 'node',
         entryPoints: ['source/index.ts'],
         bundle: true,
-        minify: true,
+        minify: false,
         treeShaking: true,
         sourcemap: true
     };
 
     await build({
         ...shared,
-        outfile: 'bundled/index.js',
-        format: 'esm',
+        outfile: 'bundled/index.cjs',
+        format: 'cjs',
     });
 }
 await buildModule();
