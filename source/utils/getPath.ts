@@ -1,15 +1,19 @@
 import * as path from 'path';
 
-import { Options, PackageManager } from "../types/Options";
+import { Options, PackageManager } from '@/types/Options.js';
 
 function getPackageManagerConfigFileName(packageManager: PackageManager): string {
     switch (packageManager) {
         case PackageManager.NPM:
-            return "package.json";
+            return 'package.json';
         case PackageManager.COMPOSER:
-            return "composer.json";
+            return 'composer.json';
         case PackageManager.MAVEN:
-            return "pom.xml";
+            return 'pom.xml';
+        case PackageManager.PIPENV:
+            return 'Pipfile';
+        case PackageManager.POETRY:
+            return 'pyproject.toml';
     }
 }
 

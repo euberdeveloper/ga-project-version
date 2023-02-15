@@ -1,9 +1,9 @@
 import * as core from '@actions/core';
 import logger from 'euberlog';
 
-import { getPath } from './utils/getPath';
-import { getVersion } from './utils/getVersion';
-import { parseOptions } from './utils/parseOptions';
+import { getPath } from './utils/getPath.js';
+import { getVersion } from './utils/getVersion.js';
+import { parseOptions } from './utils/parseOptions.js';
 
 try {
     logger.info('Parsing options...');
@@ -14,8 +14,7 @@ try {
     const version = getVersion(path, options);
     logger.success('Version gotten!!!', version);
     core.setOutput('version', version);
-}
-catch (error: any) {
+} catch (error: any) {
     console.error('Error in getting project version', error);
     core.setFailed(error.message);
 }

@@ -1,0 +1,5 @@
+test/assets/*
+jest.config.ts
+.eslintrc.cjs
+.prettierrc.cjs
+build.mjs

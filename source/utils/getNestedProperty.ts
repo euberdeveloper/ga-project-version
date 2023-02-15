@@ -2,12 +2,11 @@ export function getNestedProperty(obj: any, nestedKey: string): any {
     try {
         const keys = nestedKey.split('.');
         let value = obj;
-        for (let i = 0; i < keys.length; i++) {
-            value = value[keys[i]];
+        for (const key of keys) {
+            value = value[key];
         }
         return value;
-    }
-    catch (error: any) {
+    } catch {
         return undefined;
     }
 }
