@@ -55,7 +55,9 @@ jobs:
         run: npm run bundle
 
       - name: Remove not needed files
-        run: rm -rf node_modules 
+        run: |
+          ls
+          rm -rf node_modules .git
 
       - name: Upoad artifact
         uses: actions/upload-artifact@v2
@@ -69,6 +71,8 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
+        with:
+          ref: main
 
       - name: Remove what is alraedy there
         run: rm -rf *
