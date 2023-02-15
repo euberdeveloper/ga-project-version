@@ -5,7 +5,7 @@ async function buildModule() {
         platform: 'node',
         entryPoints: ['source/index.ts'],
         bundle: true,
-        minify: false,
+        minify: true,
         treeShaking: true,
         sourcemap: true
     };
