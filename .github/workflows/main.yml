@@ -3,7 +3,7 @@ name: Deploy action
 on:
   push:
     branches:
-      - main
+      - dev
 
 jobs:
   lint:
@@ -54,16 +54,16 @@ jobs:
       - name: Build project
         run: npm run bundle
 
-      - name: Create output folder
+      - name: Remove not needed files
         run: |
-          mkdir output
-          cp -r bundled action.yml README.md LICENSE output
+          ls
+          rm -rf node_modules .git
 
       - name: Upoad artifact
         uses: actions/upload-artifact@v2
         with:
-          name: output
-          path: output
+          name: everything
+          path: .
 
   deploy:
     needs: build
@@ -72,7 +72,7 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v3
         with:
-          ref: prod
+          ref: main
 
       - name: Remove what is alraedy there
         run: rm -rf *
@@ -80,11 +80,11 @@ jobs:
       - name: Download artifact
         uses: actions/download-artifact@v2
         with:
-          name: output
+          name: everything
           path: .
 
       - name: Commit changes
         uses: stefanzweifel/git-auto-commit-action@v4
         with:
-          commit_message: "build: update action with automatic commit"
-          branch: prod
+          commit_message: "build: duplicate code of dev with bundled code"
+          branch: main
