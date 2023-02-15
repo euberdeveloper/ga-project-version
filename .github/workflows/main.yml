@@ -57,7 +57,7 @@ jobs:
       - name: Create output folder
         run: |
           mkdir output
-          cp bundled action.yml README.md LICENSE output
+          cp -r bundled action.yml README.md LICENSE output
 
       - name: Upoad artifact
         uses: actions/upload-artifact@v2
