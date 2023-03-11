@@ -1,3 +1,5 @@
+[![GitHub Marketplace](https://img.shields.io/badge/Marketplace-v3-undefined.svg?logo=github&logoColor=white&style=flat)](https://github.com/marketplace/actions/ga-project-version)
+
 # ga-project-version
 This github action gets from the package manager json file (package.json, composer.json, ...), or in case an xml one, the version of the project and exposes it.
 
