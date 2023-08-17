@@ -19,9 +19,9 @@ function getPackageManagerConfigFileName(packageManager: PackageManager): string
 
 export function getPath(options: Options): string {
     if (options.path) {
-        return path.join(process.cwd(), options.path);
+        return path.resolve(process.cwd(), options.path);
     }
 
     const filename = getPackageManagerConfigFileName(options.packageManager);
-    return path.join(process.cwd(), options.rootDirectory, filename);
+    return path.resolve(process.cwd(), options.rootDirectory, filename);
 }
