@@ -1,9 +1,11 @@
 import { setMockActionsCoreStatus, getIsError } from '@test/utils/mockActionsCore.js';
-setMockActionsCoreStatus('integrationFails');
-import '@src/index.js';
 
-describe('Test index.ts', function () {
+import action from '@src/action.js';
+
+describe('Test index.ts for failing cases', function () {
     it('Should be errored and set is Error to true', function () {
+        setMockActionsCoreStatus('integrationFails');
+        action();
         expect(getIsError()).toBe(true);
     });
 });

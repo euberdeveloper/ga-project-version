@@ -74,34 +74,35 @@ const statuses = {
         'version-prop': undefined
     },
     integration1: {
-        'package-manager': 'npm',
-        'root-directory': path.join(ASSETS_PATH, 'npm-other'),
-        'path': path.join(ASSETS_PATH, 'npm-other', 'deep/package.json'),
-        'version-prop': 'bacucco.version'
-    },
-    integration2: {
         'package-manager': 'composer',
         'root-directory': path.join(ASSETS_PATH, 'composer'),
         'path': undefined,
         'version-prop': undefined
     },
-    integration3: {
+
+    integration2: {
         'package-manager': 'maven',
         'root-directory': path.join(ASSETS_PATH, 'maven'),
         'path': undefined,
         'version-prop': undefined
     },
-    integration4: {
+    integration3: {
         'package-manager': 'pipenv',
         'root-directory': path.join(ASSETS_PATH, 'pipenv'),
         'path': undefined,
         'version-prop': undefined
     },
-    integration5: {
+    integration4: {
         'package-manager': 'poetry',
         'root-directory': path.join(ASSETS_PATH, 'poetry'),
         'path': undefined,
         'version-prop': undefined
+    },
+    integrationDeep: {
+        'package-manager': 'npm',
+        'root-directory': path.join(ASSETS_PATH, 'npm-other'),
+        'path': path.join(ASSETS_PATH, 'npm-other', 'deep/package.json'),
+        'version-prop': 'bacucco.version'
     },
     integrationFails: {
         'package-manager': 'npm',
