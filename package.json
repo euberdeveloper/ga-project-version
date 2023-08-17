@@ -1,6 +1,6 @@
 {
   "name": "ga-project-version",
-  "version": "2.1.0",
+  "version": "2.2.0",
   "description": "This github action gets from the package manager json file (package.json, composer.json, ...) the version of the project and exposes it",
   "main": "bundled/index.js",
   "type": "module",
