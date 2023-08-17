@@ -10,6 +10,7 @@ interface Status {
 
 let status: Status | null = null;
 let output: string | null = null;
+let isError: boolean | null = null;
 
 const statuses = {
     status0: {
@@ -71,6 +72,42 @@ const statuses = {
         'root-directory': path.join(ASSETS_PATH, 'npm'),
         'path': undefined,
         'version-prop': undefined
+    },
+    integration1: {
+        'package-manager': 'npm',
+        'root-directory': path.join(ASSETS_PATH, 'npm-other'),
+        'path': path.join(ASSETS_PATH, 'npm-other', 'deep/package.json'),
+        'version-prop': 'bacucco.version'
+    },
+    integration2: {
+        'package-manager': 'composer',
+        'root-directory': path.join(ASSETS_PATH, 'composer'),
+        'path': undefined,
+        'version-prop': undefined
+    },
+    integration3: {
+        'package-manager': 'maven',
+        'root-directory': path.join(ASSETS_PATH, 'maven'),
+        'path': undefined,
+        'version-prop': undefined
+    },
+    integration4: {
+        'package-manager': 'pipenv',
+        'root-directory': path.join(ASSETS_PATH, 'pipenv'),
+        'path': undefined,
+        'version-prop': undefined
+    },
+    integration5: {
+        'package-manager': 'poetry',
+        'root-directory': path.join(ASSETS_PATH, 'poetry'),
+        'path': undefined,
+        'version-prop': undefined
+    },
+    integrationFails: {
+        'package-manager': 'npm',
+        'root-directory': path.join(ASSETS_PATH, 'npm'),
+        'path': undefined,
+        'version-prop': 'notExists.version'
     }
 };
 
@@ -84,12 +121,21 @@ jest.mock('@actions/core', () => ({
     },
     setOutput(_name: 'version', version: string) {
         output = version;
+        isError = false;
+    },
+    setFailed(_message: string) {
+        isError = true;
     }
 }));
 
 export function setMockActionsCoreStatus(statusKey: keyof typeof statuses): void {
     status = statuses[statusKey];
+    output = null;
+    isError = null;
 }
 export function getOutput(): string | null {
     return output;
+}
+export function getIsError(): boolean | null {
+    return isError;
 }

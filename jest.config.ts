@@ -17,7 +17,7 @@ function manageMapper(mapper: Record<string, string>): Record<string, string | s
 
 const config: Config.InitialOptions = {
     preset: 'ts-jest/presets/default-esm',
-    testEnvironment: 'node',
+    testEnvironment: 'jest-environment-node',
     verbose: true,
     transform: {
         '^.+\\.[cm]?tsx?$': ['ts-jest', {
@@ -27,7 +27,6 @@ const config: Config.InitialOptions = {
     },
     coverageProvider: 'v8',
     collectCoverageFrom: ['source/**/*.ts'],
-    coveragePathIgnorePatterns: ['source/index.ts'],
     moduleNameMapper: manageMapper(pathsToModuleNameMapper(tsconfigJson.compilerOptions.paths, { prefix: '<rootDir>/' }) as Record<string, string>),
     transformIgnorePatterns: ['<rootDir>/node_modules/*'],
 };
