@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [3.0.0](https://github.com/euberdeveloper/ga-project-version/compare/v2.2.1...v3.0.0) (2024-01-30)
+
+
+### ⚠ BREAKING CHANGES
+
+* **action.yml:** Now node 20 gets used
+
+### Bug Fixes
+
+* **action.yml:** pass from node16 to node20 ([6fe36b4](https://github.com/euberdeveloper/ga-project-version/commit/6fe36b4c25f07139c811387283f277db6471bdbf)), closes [#5](https://github.com/euberdeveloper/ga-project-version/issues/5)
+
 ### [2.2.1](https://github.com/euberdeveloper/ga-project-version/compare/v2.2.0...v2.2.1) (2023-08-17)
 
 ## [2.2.0](https://github.com/euberdeveloper/ga-project-version/compare/v1.3.0...v2.2.0) (2023-08-17)
